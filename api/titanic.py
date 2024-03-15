@@ -13,8 +13,8 @@ api = Api(titanic_api)
 class TitanicAPI:
     class Passenger(Resource):
         def get(self):
-            passenger = request.get_json()
-            response = predictSurvival(passenger)
-            return jsonify(response)
+            passenger = "John Mortenson"
+            response = predictSurvival(self=self, passenger=passenger) # here is the problem
+            return response
 
     api.add_resource(Passenger, "/")  # Register Passenger resource
