@@ -15,6 +15,7 @@ class TitanicAPI:
         def get(self):
             passenger = "John Mortenson"
             response = predictSurvival(self=self, passenger=passenger) # here is the problem
-            return response
+            print(response)
+            # return response
 
     api.add_resource(Passenger, "/")  # Register Passenger resource
