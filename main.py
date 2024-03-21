@@ -62,8 +62,6 @@ custom_cli = AppGroup("custom", help="Custom commands")
 # Define a command to generate data
 @custom_cli.command("generate_data")
 def generate_data():
-    initUsers()
-    initPlayers()
     initTitanic()
 
 
