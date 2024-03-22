@@ -50,7 +50,6 @@ def before_request():
     if allowed_origin in [
         "http://localhost:4100",
         "http://127.0.0.1:4100",
-        "https://trevorhuang1.github.io/cpt-frontend/",
     ]:
         cors._origins = allowed_origin
 
