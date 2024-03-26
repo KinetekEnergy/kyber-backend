@@ -24,9 +24,8 @@ class DemographyRecognition:
         # analysis
         attributes = ["age", "gender", "race"]  # which attributes
         information = dp.analyze(image_np, attributes)  # analyze
-        age_json = json.loads(information)  # get the age
 
-        return age_json  # return
+        return information  # return
 
     def parseImage():
         pass
