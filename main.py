@@ -15,6 +15,7 @@ from __init__ import app, db, cors  # Definitions initialization
 
 # setup APIs
 from api.titanic import titanic_api
+from api.recognition import recognition_api
 
 # database migrations
 from model.titanics import initTitanic
@@ -25,6 +26,7 @@ db.init_app(app)
 
 # register URIs
 app.register_blueprint(titanic_api)
+app.register_blueprint(recognition_api)
 
 
 @app.errorhandler(404)  # catch for URL not found
