@@ -8,10 +8,12 @@ recognition_api = Blueprint("recognition_api", __name__, url_prefix="/api/recogn
 # API docs https://flask-restful.readthedocs.io/en/latest/api.html
 api = Api(recognition_api)
 
+
 class RecognitionApi:
     class _CRUD(Resource):
         def post(self):
             data = request.get_json()
             demography = DemographyRecognition.recognize(self, base64_encoded=data)
             return jsonify(demography)
+
     api.add_resource(_CRUD, "/")
