@@ -22,8 +22,10 @@ class DemographyRecognition:
         image_np = np.array(image)  # convert to np array
 
         # analysis
-        attributes = ["age", "gender", "race"]  # which attributes
+        attributes = ["age", "gender"]  # which attributes
         information = dp.analyze(image_np, attributes)  # analyze
+
+        print(information)
 
         return information  # return
 
