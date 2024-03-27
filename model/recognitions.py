@@ -10,7 +10,7 @@ import numpy as np
 class DemographyRecognition:
     def recognize(self, base64_encoded):
         # image parsing in preparation
-        b64_string = base64_encoded["base64_encoded"]  # remove from dictionary
+        b64_string = base64_encoded #["base64_encoded"]  # remove from dictionary
 
         if b64_string.startswith("data:image"):  # if headers --> remove
             b64_string = b64_string.split(",", 1)[1]
@@ -42,10 +42,8 @@ class DemographyRecognition:
         elif woman < man:
             gender = "Male"
         
-        print(age)
-        print(gender)
-        
-        returnData = [age, gender] # create a list and send it
+        # the order is very important (must be gender THEN age)
+        returnData = [gender, age] # create a list and send it
         
         return returnData  # return
 
