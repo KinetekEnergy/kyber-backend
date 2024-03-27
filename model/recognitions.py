@@ -25,18 +25,29 @@ class DemographyRecognition:
         attributes = ["age", "gender"]  # which attributes
         information = dp.analyze(image_np, attributes)  # analyze
 
+        # -------------------------------------------------------------------------------- #
+
+        # data extraction
         data = information[0] # get the first element
         age = data['age'] # age extraction
 
         bothGenders = data['gender'] # get both gender confidence rates
         woman = bothGenders['Woman'] # woman confidence
         man = bothGenders['Man'] # man confidence
-        gender = max(woman, man) # find the greater one
+        
+        # based on the probabilities, find which is larger and return that
+        gender = None
+        if woman > man:
+            gender = "Female"
+        elif woman < man:
+            gender = "Male"
         
         print(age)
         print(gender)
-
-        return age  # return
+        
+        returnData = [age, gender] # create a list and send it
+        
+        return returnData  # return
 
     def parseImage():
         pass
